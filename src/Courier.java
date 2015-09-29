@@ -145,7 +145,8 @@ public class Courier {
 		tp.addTab("Address Book", null, ab, "See Contacts!");
 		tp.setMnemonicAt(1, KeyEvent.VK_2);
 		tp.addTab("Clock", null, c, "What time is it?");
-		//
+		
+		//Right pane
 		JPanel rightPane = new JPanel(new BorderLayout());
 		JPanel canvas = new JPanel();
 
@@ -214,7 +215,8 @@ public class Courier {
 		buttons.add(o);
 		buttons.add(t);
 		buttonManager.add(buttons);
-		// buttonManager.add(radioButtons);
+		
+		
 		// rightPane.add(canvas, BorderLayout.PAGE_START);
 		rightPane.add(canvas, BorderLayout.CENTER);
 		rightPane.add(buttonManager, BorderLayout.SOUTH);
