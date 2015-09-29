@@ -145,10 +145,10 @@ public class Courier {
 		tp.addTab("Address Book", null, ab, "See Contacts!");
 		tp.setMnemonicAt(1, KeyEvent.VK_2);
 		tp.addTab("Clock", null, c, "What time is it?");
-		
+
 		//Right pane
 		JPanel rightPane = new JPanel(new BorderLayout());
-		JPanel canvas = new JPanel();
+		final DrawPad canvas = new DrawPad();
 
 		// Buttons Organizer
 		JPanel buttonManager = new JPanel();
@@ -157,6 +157,12 @@ public class Courier {
 		JButton dp = new JButton("Delete Page");
 		JButton pf = new JButton("Page Forward");
 		JButton pb = new JButton("Page Backward");
+		JButton clearButton = new JButton("Clear");
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				canvas.clear();
+			}
+		});
 		JRadioButton ffi = new JRadioButton("Free-form Ink");
 		JRadioButton r = new JRadioButton("Rectangle");
 		JRadioButton o = new JRadioButton("Oval");
@@ -210,13 +216,14 @@ public class Courier {
 		buttons.add(dp);
 		buttons.add(pf);
 		buttons.add(pb);
+		buttons.add(clearButton);
 		buttons.add(ffi);
 		buttons.add(r);
 		buttons.add(o);
 		buttons.add(t);
 		buttonManager.add(buttons);
-		
-		
+
+
 		// rightPane.add(canvas, BorderLayout.PAGE_START);
 		rightPane.add(canvas, BorderLayout.CENTER);
 		rightPane.add(buttonManager, BorderLayout.SOUTH);
